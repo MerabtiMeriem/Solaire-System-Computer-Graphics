@@ -1,14 +1,22 @@
-
 #include "camera.h"
 #include <GL/glut.h>
 #include <cmath>
 
-// Initialise la caméra à 15 unités du centre
+// Position de départ : légèrement au-dessus du plan des orbites,
+// à 28 unités du Soleil, regardant un peu vers le bas (vue de côté)
 Camera::Camera()
-    : x(0.0f), y(0.0f), z(15.0f),
-      yaw(0.0f), pitch(0.0f),
+    : x(0.0f), y(6.0f), z(28.0f),
+      yaw(0.0f), pitch(-12.0f),
       movementSpeed(0.5f)
 {
+}
+
+// Remet la caméra comme au démarrage
+void Camera::reset()
+{
+    x = 0.0f;  y = 6.0f;  z = 28.0f;
+    yaw = 0.0f;
+    pitch = -12.0f;
 }
 
 // Applique la position et l'orientation de la caméra
@@ -62,5 +70,3 @@ void Camera::rotatePitch(float angle)
     if (pitch < -89.0f)
         pitch = -89.0f;
 }
-
-

@@ -19,9 +19,6 @@ target_include_directories(ComputerGraphics PRIVATE
     include
     ${GLUT_INCLUDE_DIRS}
 )
+    
 
-target_link_libraries(ComputerGraphics PRIVATE
-    OpenGL::GL
-    GLUT::GLUT
-)
-
+target_link_libraries(ComputerGraphics freeglut opengl32 glu32)

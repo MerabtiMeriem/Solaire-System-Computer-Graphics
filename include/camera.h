@@ -1,4 +1,3 @@
-
 #ifndef CAMERA_H
 #define CAMERA_H
 
@@ -14,6 +13,7 @@ public:
     Camera();
 
     void applyView();
+    void reset();   // Remet la caméra à sa position de départ
 
     void moveForward(float direction);
     void moveRight(float direction);
